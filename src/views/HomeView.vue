@@ -28,19 +28,88 @@ export default {
           suit: "spades",
           value: 1,
         },
+        {
+          id: 5,
+          suit: "clubs",
+          value: 1,
+        },
+        {
+          id: 6,
+          suit: "diamonds",
+          value: 1,
+        },
+        {
+          id: 7,
+          suit: "hearts",
+          value: 1,
+        },
+        {
+          id: 8,
+          suit: "spades",
+          value: 2,
+        },
+        {
+          id: 9,
+          suit: "clubs",
+          value: 2,
+        },
+        {
+          id: 10,
+          suit: "diamonds",
+          value: 2,
+        },
+        {
+          id: 11,
+          suit: "hearts",
+          value: 2,
+        },
+        {
+          id: 12,
+          suit: "spades",
+          value: 3,
+        },
+        {
+          id: 13,
+          suit: "clubs",
+          value: 3,
+        },
+        {
+          id: 14,
+          suit: "diamonds",
+          value: 3,
+        },
+        {
+          id: 15,
+          suit: "hearts",
+          value: 3,
+        },
       ],
     };
   },
   created: function () {},
-  methods: {},
+  methods: {
+    reshuffle: function () {
+      let cards = this.cards;
+      cards.reverse();
+      console.log(cards);
+    },
+  },
 };
 </script>
 
 <template>
   <div class="home">
-    <div class="remaining-cards">
-      <!-- REMAINING CARDS TABLE -->
-      <h3>Remaining Cards</h3>
+    <button v-on:click="reshuffle()">Reshuffle</button>
+    ||
+    <button v-on="click">Draw</button>
+    ||
+
+    <button v-on="click">Draw new hand</button>
+
+    <div class="drawn-cards">
+      <!-- DRAWN CARDS TABLE -->
+      <h3>Drawn Cards</h3>
+
       <table>
         <thead>
           <tr>
@@ -56,9 +125,9 @@ export default {
         </tbody>
       </table>
     </div>
-    <div class="drawn-cards">
-      <!-- Drawn CARDS TABLE -->
-      <h3>Drawn Cards</h3>
+    <div class="remaining-cards">
+      <!-- REMAINING CARDS TABLE -->
+      <h3>REMAINING CARDS</h3>
       <table>
         <thead>
           <tr>
