@@ -93,12 +93,16 @@ export default {
       cards.reverse();
       console.log(cards);
     },
+    drawnCards: function () {},
+    remainingCards: function () {},
+    // Button #2 ("Draw") is where I stopped.
   },
 };
 </script>
 
 <template>
   <div class="home">
+    <!-- BUTTONS -->
     <button v-on:click="reshuffle()">Reshuffle</button>
     ||
     <button v-on="click">Draw</button>
@@ -106,11 +110,11 @@ export default {
 
     <button v-on="click">Draw new hand</button>
 
-    <div class="drawn-cards">
+    <div class="drawn-cards" style="overflow: auto">
       <!-- DRAWN CARDS TABLE -->
-      <h3>Drawn Cards</h3>
+      <h3>DRAWN CARDS</h3>
 
-      <table>
+      <table style="overflow: auto; margin-left: auto; margin-right: auto">
         <thead>
           <tr>
             <th scope="col">Suit</th>
@@ -119,8 +123,8 @@ export default {
         </thead>
         <tbody>
           <tr v-for="card in cards" :key="card.id">
-            <td>{{ card.suit }}</td>
-            <td>{{ card.value }}</td>
+            <td>suit</td>
+            <td>value</td>
           </tr>
         </tbody>
       </table>
@@ -128,7 +132,7 @@ export default {
     <div class="remaining-cards">
       <!-- REMAINING CARDS TABLE -->
       <h3>REMAINING CARDS</h3>
-      <table>
+      <table style="overflow: auto; margin-left: auto; margin-right: auto">
         <thead>
           <tr>
             <th scope="col">Suit</th>
